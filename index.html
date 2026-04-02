@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godly Counsel - Relationship Guidance for Young Adults</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        :root {
+            --primary-gold: #D4AF37;
+            --primary-black: #1a1a1a;
+            --primary-white: #FFFFFF;
+            --light-gray: #F5F5F5;
+            --dark-gray: #4a4a4a;
+            --accent-red: #C85A54;
+            --accent-green: #6B9E7A;
+            --text-dark: #2c2c2c;
+            --border-light: #E8E8E8;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--primary-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        h1, h2, h3 {
+            font-family: 'Crimson Text', serif;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background: var(--primary-black);
+            color: var(--primary-white);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: var(--primary-gold);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-black);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--primary-white);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--primary-gold);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-black) 0%, #2a2a2a 100%);
+            color: var(--primary-white);
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--primary-gold) 0%, transparent 70%);
+            opacity: 0.08;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            color: var(--primary-white);
+            margin-bottom: 1.5rem;
+            animation: slideInUp 0.8s ease 0.2s both;
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            color: var(--primary-gold);
+            font-family: 'Crimson Text', serif;
+            margin-bottom: 2rem;
+            animation: slideInUp 0.8s ease 0.4s both;
+        }
+
+        .hero-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            animation: slideInUp 0.8s ease 0.6s both;
+        }
+
+        .cta-button {
+            background: var(--primary-gold);
+            color: var(--primary-black);
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            animation: slideInUp 0.8s ease 0.8s both;
+        }
+
+        .cta-button:hover {
+            background: #E5C158;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+        }
+
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.8s ease 1s both;
+        }
+
+        .heart-icon {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, var(--primary-gold), #E5C158);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 150px;
+            opacity: 0.9;
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ===== FEATURES SECTION ===== */
+        .features {
+            background: var(--light-gray);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--primary-white);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-gold);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-black);
+        }
+
+        .feature-card p {
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+        }
+
+        /* ===== ASSESSMENT SECTION ===== */
+        .assessment {
+            background: var(--primary-white);
+        }
+
+        .assessment-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .assessment-intro p {
+            color: var(--dark-gray);
+            font-size: 1.05rem;
+        }
+
+        .quiz-container {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quiz-container.active {
+            display: block;
+        }
+
+        .question-card {
+            background: var(--light-gray);
+            padding: 2.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            animation: slideInUp 0.5s ease;
+        }
+
+        .question-number {
+            color: var(--primary-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .question-text {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-black);
+            font-weight: 500;
+        }
+
+        .answer-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .answer-option {
+            display: flex;
+            align-items: center;
+            padding: 1.2rem;
+            border: 2px solid var(--border-light);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--primary-white);
+        }
+
+        .answer-option:hover {
+            border-color: var(--primary-gold);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .answer-option input[type="radio"] {
+            margin-right: 1rem;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            accent-color: var(--primary-gold);
+        }
+
+        .answer-option label {
+            cursor: pointer;
+            flex: 1;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+
+        .quiz-navigation {
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .btn-nav {
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--primary-gold);
+            background: transparent;
+            color: var(--primary-gold);
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .btn-nav:hover:not(:disabled) {
+            background: var(--primary-gold);
+            color: var(--primary-black);
+        }
+
+        .btn-nav:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: var(--border-light);
+            border-radius: 2px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary-gold);
+            transition: width 0.3s ease;
+        }
+
+        /* ===== RESULTS SECTION ===== */
+        .results-container {
+            display: none;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .results-container.active {
+            display: block;
+            animation: slideInUp 0.6s ease;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .results-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        .health-score {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 2rem 0;
+        }
+
+        .score-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: var(--primary-white);
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .score-circle.healthy {
+            background: linear-gradient(135deg, var(--accent-green), #5A8A6A);
+        }
+
+        .score-circle.caution {
+            background: linear-gradient(135deg, #F5A623, #D97A3A);
+        }
+
+        .score-circle.critical {
+            background: linear-gradient(135deg, var(--accent-red), #A94844);
+        }
+
+        .score-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+
+        .score-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0.5rem;
+        }
+
+        .results-sections {
+            display: grid;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .result-section {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-gold);
+        }
+
+        .result-section h3 {
+            color: var(--primary-black);
+            margin-bottom: 1.5rem;
+        }
+
+        .warning-list, .strength-list, .action-list {
+            list-style: none;
+        }
+
+        .warning-list li, .action-list li, .strength-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .warning-list li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            color: var(--accent-red);
+            font-weight: bold;
+        }
+
+        .strength-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .action-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        .scripture-block {
+            background: var(--primary-white);
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-gold);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .scripture-ref {
+            display: block;
+            margin-top: 1rem;
+            font-weight: 600;
+            font-style: normal;
+            color: var(--primary-black);
+        }
+
+        .journal-prompt {
+            background: rgba(212, 175, 55, 0.1);
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1.5rem 0;
+        }
+
+        .journal-prompt strong {
+            color: var(--primary-black);
+        }
+
+        /* ===== RESOURCES SECTION ===== */
+        .resources {
+            background: var(--light-gray);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .resource-card {
+            background: var(--primary-white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .resource-card h4 {
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .resource-card p {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+
+        .resource-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .resource-link:hover {
+            color: var(--primary-black);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--primary-black);
+            color: var(--primary-white);
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        footer h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-gold);
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--primary-gold);
+        }
+
+        .footer-divider {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 2rem;
+            margin-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.9rem;
+        }
+
+        /* ===== MODAL ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--primary-white);
+            padding: 2.5rem;
+            border-radius: 8px;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--primary-gold);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .hero .container {
+                grid-template-columns: 1fr;
+                padding: 2rem 0;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            nav {
+                gap: 1rem;
+                font-size: 0.85rem;
+            }
+
+            .heart-icon {
+                width: 200px;
+                height: 200px;
+                font-size: 100px;
+            }
+
+            .question-card {
+                padding: 1.5rem;
+            }
+
+            .quiz-navigation {
+                flex-direction: column;
+            }
+
+            .btn-nav {
+                width: 100%;
+            }
+
+            .score-circle {
+                width: 150px;
+                height: 150px;
+            }
+
+            .score-number {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        focus-visible {
+            outline: 2px solid var(--primary-gold);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation: none !important;
+                transition: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">G</div>
+                <span>Godly Counsel</span>
+            </div>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#assessment">Assessment</a>
+                <a href="#resources">Resources</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Find Clarity. Build Godly Relationships.</h1>
+                <p class="hero-tagline">Wisdom rooted in Scripture. Grounded in Psychology.</p>
+                <p class="hero-text">
+                    Navigating relationships can be confusing, especially when you're surrounded by unhealthy patterns. 
+                    Godly Counsel combines biblical principles with evidence-based psychological guidance to help young 
+                    adults recognize red flags, establish healthy boundaries, and cultivate relationships that honor God.
+                </p>
+                <button class="cta-button" onclick="scrollToAssessment()">Start Your Assessment</button>
+            </div>
+            <div class="hero-visual">
+                <div class="heart-icon">💜</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FEATURES SECTION ===== -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Godly Counsel?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📖</div>
+                    <h3>Biblical Foundation</h3>
+                    <p>Every recommendation is grounded in Scripture, helping you align your relationships with God's design for love and commitment.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Psychological Insight</h3>
+                    <p>Practical tools from attachment theory, emotional intelligence, and therapeutic best practices. Faith and science working together.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Personalized Guidance</h3>
+                    <p>Your assessment reveals specific areas of concern and tailored action steps. No generic advice—just what you need to hear.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💪</div>
+                    <h3>Empower Yourself</h3>
+                    <p>Learn to recognize red flags, set boundaries, and make decisions that honor both your wellbeing and your faith.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Supportive Resources</h3>
+                    <p>Reflective journal prompts, affirmations, curated scriptures, and links to professional counseling if needed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Your Privacy Matters</h3>
+                    <p>This assessment stays on your device. No tracking, no data sharing. Just you and your journey toward healthier relationships.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ASSESSMENT SECTION ===== -->
+    <section class="assessment" id="assessment">
+        <div class="container">
+            <div class="assessment-intro">
+                <h2>Relationship Health Assessment</h2>
+                <p>
+                    This brief assessment will help you understand the health of your current or past relationship. 
+                    Answer honestly—there are no judgments here, only clarity and hope. Your responses will generate personalized 
+                    guidance grounded in Scripture and psychology.
+                </p>
+                <button class="cta-button" id="startBtn" onclick="startQuiz()" style="margin-top: 2rem;">Begin Assessment</button>
+            </div>
+
+            <div class="quiz-container" id="quizContainer">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <div id="questionsContainer"></div>
+
+                <div class="quiz-navigation">
+                    <button class="btn-nav" id="prevBtn" onclick="previousQuestion()" disabled>← Previous</button>
+                    <button class="btn-nav" id="nextBtn" onclick="nextQuestion()" disabled>Next →</button>
+                </div>
+            </div>
+
+            <div class="results-container" id="resultsContainer">
+                <div class="results-header">
+                    <h2>Your Assessment Results</h2>
+                    <p>Here's your personalized guidance. Remember: these insights are meant to help you move toward healthier, more Godly relationships.</p>
+                </div>
+                <div id="resultsContent"></div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button class="cta-button" onclick="restartQuiz()">Take Assessment Again</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== RESOURCES SECTION ===== -->
+    <section class="resources" id="resources">
+        <div class="container">
+            <h2>Resources & Support</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+                Whether you need immediate help, deeper reflection, or professional support, these resources are here for you.
+            </p>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h4>🆘 Crisis Support</h4>
+                    <p><strong>National Domestic Violence Hotline</strong></p>
+                    <p>1-800-799-7233 (24/7, confidential)</p>
+                    <p><strong>Crisis Text Line</strong></p>
+                    <p>Text HOME to 741741</p>
+                </div>
+                <div class="resource-card">
+                    <h4>🙏 Spiritual Guidance</h4>
+                    <p>Consider speaking with a trusted pastor, mentor, or Christian counselor. Your church community is a vital resource.</p>
+                </div>
+                <div class="resource-card">
+                    <h4>💬 Professional Counseling</h4>
+                    <p>Therapy with a licensed Christian counselor can provide deeper support. Organizations like AACC offer counselor locators.</p>
+                </div>
+                <div class="resource-card">
+                    <h4>📚 Recommended Reading</h4>
+                    <p><em>His Needs, Her Needs</em> by Willard Harley</p>
+                    <p><em>Boundaries</em> by Henry Cloud & John Townsend</p>
+                </div>
+                <div class="resource-card">
+                    <h4>🤝 Support Communities</h4>
+                    <p>Join a Bible study, prayer group, or faith-based support community focused on relationships.</p>
+                </div>
+                <div class="resource-card">
+                    <h4>📱 Additional Help</h4>
+                    <p><strong>AACC</strong> (Association of Christian Counselors) - Find vetted counselors</p>
+                    <p><strong>BetterHelp</strong> - Online therapy with filter for faith-based counselors</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="contact">
+        <div class="container">
+            <div>
+                <h4>Godly Counsel</h4>
+                <p>Helping young adults navigate relationships with wisdom, grace, and biblical truth.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#assessment">Assessment</a>
+                <a href="#resources">Resources</a>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <a href="#" onclick="alert('Email: support@godlycounsel.com')">Contact Us</a>
+                <a href="#" onclick="alert('Privacy Policy')">Privacy Policy</a>
+                <a href="#" onclick="alert('Terms of Service')">Terms of Service</a>
+            </div>
+            <div>
+                <h4>Remember</h4>
+                <p>"Above all, love each other deeply, because love covers a multitude of sins." — 1 Peter 4:8</p>
+            </div>
+        </div>
+        <div class="footer-divider">
+            <p>&copy; 2025 Godly Counsel. All rights reserved. Built with faith and compassion.</p>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Assessment Questions
+        const questions = [
+            {
+                id: 1,
+                text: "Does your partner respect your opinion and listen when you share concerns?",
+                options: [
+                    { text: "Yes, they genuinely listen and consider my perspective.", score: 2 },
+                    { text: "Sometimes, but they often dismiss or belittle my views.", score: 1 },
+                    { text: "No, they shut me down or make me feel stupid.", score: 0 }
+                ],
+                category: "Communication & Respect"
+            },
+            {
+                id: 2,
+                text: "How does your partner handle disagreements?",
+                options: [
+                    { text: "We discuss calmly and work toward solutions together.", score: 2 },
+                    { text: "We argue sometimes, but we resolve things eventually.", score: 1 },
+                    { text: "Arguments turn into personal attacks or yelling.", score: 0 }
+                ],
+                category: "Conflict Resolution"
+            },
+            {
+                id: 3,
+                text: "Does your partner try to control who you see, where you go, or what you wear?",
+                options: [
+                    { text: "No, they respect my independence and friendships.", score: 2 },
+                    { text: "Occasionally they express jealousy or disapproval.", score: 1 },
+                    { text: "Yes, they restrict my freedom or make me feel monitored.", score: 0 }
+                ],
+                category: "Autonomy & Control"
+            },
+            {
+                id: 4,
+                text: "Are you comfortable being honest with your partner about your finances?",
+                options: [
+                    { text: "Yes, we're transparent about money and decisions.", score: 2 },
+                    { text: "Mostly, but there are some topics we avoid.", score: 1 },
+                    { text: "No, they're secretive or controlling with finances.", score: 0 }
+                ],
+                category: "Financial Transparency"
+            },
+            {
+                id: 5,
+                text: "How does your partner react when you set boundaries?",
+                options: [
+                    { text: "They respect my boundaries and feel comfortable sharing theirs.", score: 2 },
+                    { text: "Sometimes they push back, but eventually accept them.", score: 1 },
+                    { text: "They become angry, guilt-trip me, or ignore boundaries.", score: 0 }
+                ],
+                category: "Boundaries & Respect"
+            },
+            {
+                id: 6,
+                text: "Do you feel emotionally or physically safe with your partner?",
+                options: [
+                    { text: "Yes, I feel safe and secure in all situations.", score: 2 },
+                    { text: "Mostly, but there are moments when I feel uncertain.", score: 1 },
+                    { text: "No, I feel anxious, afraid, or sometimes hurt.", score: 0 }
+                ],
+                category: "Safety & Trust"
+            },
+            {
+                id: 7,
+                text: "Does your partner share your spiritual values and goals?",
+                options: [
+                    { text: "Yes, we're aligned in faith and spiritual growth.", score: 2 },
+                    { text: "Somewhat, but we have different priorities.", score: 1 },
+                    { text: "No, we're very different in our beliefs or commitment.", score: 0 }
+                ],
+                category: "Spiritual Alignment"
+            },
+            {
+                id: 8,
+                text: "How often do you feel valued and appreciated by your partner?",
+                options: [
+                    { text: "Regularly—they show appreciation and affection.", score: 2 },
+                    { text: "Sometimes, but I often feel taken for granted.", score: 1 },
+                    { text: "Rarely—I feel criticized or unimportant.", score: 0 }
+                ],
+                category: "Emotional Connection"
+            },
+            {
+                id: 9,
+                text: "Has your partner ever made you feel ashamed of yourself or your background?",
+                options: [
+                    { text: "No, they celebrate who I am.", score: 2 },
+                    { text: "Occasionally they make insensitive comments.", score: 1 },
+                    { text: "Yes, they regularly criticize me or my heritage.", score: 0 }
+                ],
+                category: "Respect & Dignity"
+            },
+            {
+                id: 10,
+                text: "Do you have healthy outside relationships (friends, family, faith community)?",
+                options: [
+                    { text: "Yes, my partner supports these relationships.", score: 2 },
+                    { text: "Somewhat, but my partner prefers I focus on them.", score: 1 },
+                    { text: "No, my partner discourages other relationships.", score: 0 }
+                ],
+                category: "Social Connection"
+            }
+        ];
+
+        let currentQuestion = 0;
+        let answers = {};
+        let scores = { categories: {}, total: 0 };
+
+        // Initialize categories in scores
+        questions.forEach(q => {
+            if (!scores.categories[q.category]) {
+                scores.categories[q.category] = { total: 0, max: 0, count: 0 };
+            }
+            scores.categories[q.category].max += 2;
+            scores.categories[q.category].count++;
+        });
+
+        function scrollToAssessment() {
+            document.getElementById('assessment').scrollIntoView({ behavior: 'smooth' });
+            setTimeout(() => startQuiz(), 500);
+        }
+
+        function startQuiz() {
+            currentQuestion = 0;
+            answers = {};
+            scores.total = 0;
+            Object.keys(scores.categories).forEach(cat => {
+                scores.categories[cat].total = 0;
+            });
+
+            document.getElementById('startBtn').style.display = 'none';
+            document.getElementById('quizContainer').classList.add('active');
+            document.getElementById('resultsContainer').classList.remove('active');
+            renderQuestion();
+        }
+
+        function renderQuestion() {
+            const question = questions[currentQuestion];
+            const container = document.getElementById('questionsContainer');
+
+            let html = `
+                <div class="question-card">
+                    <div class="question-number">Question ${currentQuestion + 1} of ${questions.length}</div>
+                    <div class="question-text">${question.text}</div>
+                    <div class="answer-options">
+            `;
+
+            question.options.forEach((option, idx) => {
+                const optionId = `q${currentQuestion}_${idx}`;
+                const isChecked = answers[currentQuestion] === idx ? 'checked' : '';
+                html += `
+                    <label class="answer-option">
+                        <input type="radio" name="question${currentQuestion}" value="${idx}" ${isChecked} id="${optionId}" onchange="selectAnswer(${currentQuestion}, ${idx})">
+                        <label for="${optionId}">${option.text}</label>
+                    </label>
+                `;
+            });
+
+            html += `</div></div>`;
+            container.innerHTML = html;
+
+            updateProgress();
+            updateNavButtons();
+        }
+
+        function selectAnswer(questionIdx, optionIdx) {
+            answers[questionIdx] = optionIdx;
+            updateNavButtons();
+        }
+
+        function nextQuestion() {
+            if (currentQuestion < questions.length - 1 && answers[currentQuestion] !== undefined) {
+                currentQuestion++;
+                renderQuestion();
+                document.getElementById('questionsContainer').scrollIntoView({ behavior: 'smooth' });
+            } else if (currentQuestion === questions.length - 1 && answers[currentQuestion] !== undefined) {
+                completeQuiz();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 0) {
+                currentQuestion--;
+                renderQuestion();
+                document.getElementById('questionsContainer').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function updateNavButtons() {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            prevBtn.disabled = currentQuestion === 0;
+            nextBtn.disabled = answers[currentQuestion] === undefined;
+
+            if (currentQuestion === questions.length - 1) {
+                nextBtn.textContent = 'View Results →';
+            } else {
+                nextBtn.textContent = 'Next →';
+            }
+        }
+
+        function updateProgress() {
+            const progress = ((currentQuestion + 1) / questions.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+        }
+
+        function completeQuiz() {
+            // Calculate scores
+            Object.keys(answers).forEach(qIdx => {
+                const question = questions[qIdx];
+                const optionScore = question.options[answers[qIdx]].score;
+                const category = question.category;
+                
+                scores.categories[category].total += optionScore;
+                scores.total += optionScore;
+            });
+
+            generateResults();
+            document.getElementById('quizContainer').classList.remove('active');
+            document.getElementById('resultsContainer').classList.add('active');
+            document.getElementById('resultsContainer').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function generateResults() {
+            const maxScore = questions.length * 2;
+            const percentage = Math.round((scores.total / maxScore) * 100);
+
+            let healthStatus, statusColor, interpretation;
+
+            if (percentage >= 70) {
+                healthStatus = 'Healthy Relationship';
+                statusColor = 'healthy';
+                interpretation = 'Your relationship shows strong foundations of respect, trust, and mutual care. Continue nurturing these positive patterns and stay grounded in your faith.';
+            } else if (percentage >= 40) {
+                healthStatus = 'Caution: Mixed Patterns';
+                statusColor = 'caution';
+                interpretation = 'There are both positive and concerning patterns. This is an opportunity to address issues early and set healthier boundaries before patterns deepen.';
+            } else {
+                healthStatus = 'Critical: Red Flags Present';
+                statusColor = 'critical';
+                interpretation = 'Significant red flags suggest this relationship may be unhealthy or unsafe. Consider reaching out to a trusted mentor, counselor, or crisis support.';
+            }
+
+            let warnings = '';
+            let strengths = '';
+            let actions = '';
+
+            // Identify weak areas and strengths
+            Object.keys(scores.categories).forEach(category => {
+                const cat = scores.categories[category];
+                const catPercentage = Math.round((cat.total / cat.max) * 100);
+
+                if (catPercentage < 50) {
+                    if (category === 'Autonomy & Control') {
+                        warnings += `<li>Your partner may be controlling or limiting your independence. This is a serious concern.</li>`;
+                    } else if (category === 'Safety & Trust') {
+                        warnings += `<li>You don't feel physically or emotionally safe. This requires immediate attention.</li>`;
+                    } else if (category === 'Communication & Respect') {
+                        warnings += `<li>Your relationship lacks respectful communication. Practice assertiveness and clarity.</li>`;
+                    } else {
+                        warnings += `<li><strong>${category}:</strong> Work on building trust and understanding in this area.</li>`;
+                    }
+                } else if (catPercentage >= 70) {
+                    strengths += `<li><strong>${category}</strong> is a strong foundation in your relationship.</li>`;
+                }
+            });
+
+            // Generate action steps
+            if (percentage < 50) {
+                actions += `<li>Schedule a conversation with a trusted pastor, mentor, or Christian counselor immediately.</li>`;
+                actions += `<li>If you feel unsafe, reach out to the National Domestic Violence Hotline: 1-800-799-7233.</li>`;
+                actions += `<li>Journal your feelings and specific concerns. Clarity comes before change.</li>`;
+            } else if (percentage < 70) {
+                actions += `<li>Identify 1-2 specific areas to address with your partner in a calm conversation.</li>`;
+                actions += `<li>Set one new boundary this week and practice maintaining it with gentleness and firmness.</li>`;
+                actions += `<li>Connect with a faith community or counselor for accountability and support.</li>`;
+            } else {
+                actions += `<li>Celebrate the foundation you've built. Continue investing in open communication and spiritual growth.</li>`;
+                actions += `<li>Check in with each other regularly about how you're both feeling and growing.</li>`;
+                actions += `<li>Consider a marriage/relationship counselor to deepen your connection even further.</li>`;
+            }
+
+            const resultsHTML = `
+                <div class="health-score">
+                    <div class="score-circle ${statusColor}">
+                        <div class="score-number">${percentage}%</div>
+                        <div class="score-label">${healthStatus}</div>
+                    </div>
+                </div>
+
+                <div class="results-sections">
+                    <div class="result-section">
+                        <h3>📊 What This Means</h3>
+                        <p>${interpretation}</p>
+                    </div>
+
+                    ${strengths ? `<div class="result-section">
+                        <h3>✓ Your Strengths</h3>
+                        <ul class="strength-list">${strengths}</ul>
+                    </div>` : ''}
+
+                    ${warnings ? `<div class="result-section">
+                        <h3>⚠️ Areas of Concern</h3>
+                        <ul class="warning-list">${warnings}</ul>
+                    </div>` : ''}
+
+                    <div class="result-section">
+                        <h3>→ Your Next Steps</h3>
+                        <ul class="action-list">${actions}</ul>
+                    </div>
+
+                    <div class="result-section">
+                        <h3>📖 Biblical Reflection</h3>
+                        <div class="scripture-block">
+                            "Beloved, I pray that all may go well with you and that you may be in good health, as it goes well with your soul."
+                            <span class="scripture-ref">— 3 John 1:2</span>
+                        </div>
+                        <p>Your wellbeing—spiritual, emotional, and physical—matters deeply to God. He desires for you to experience relationships filled with love, respect, and growth. If your current relationship doesn't reflect this, it's okay to seek help and make changes.</p>
+
+                        <div class="scripture-block">
+                            "Therefore each of you must put off falsehood and speak truthfully to your neighbor, for we are all members of one body. 'In your anger do not sin': Do not let the sun go down while you are still angry, and do not give the devil a foothold."
+                            <span class="scripture-ref">— Ephesians 4:25-27</span>
+                        </div>
+                        <p>Healthy relationships are built on truth and the willingness to address issues with grace. Don't carry resentment alone—reach out for support.</p>
+                    </div>
+
+                    <div class="result-section">
+                        <h3>🗝️ Reflection Journal</h3>
+                        <div class="journal-prompt">
+                            <strong>Take 10 minutes to journal:</strong>
+                            <ul style="margin-top: 1rem; list-style-position: inside;">
+                                <li>What surprised you most about these results?</li>
+                                <li>What's one step you can take this week to move toward healthier patterns?</li>
+                                <li>Who is one trusted person you can talk to about your relationship?</li>
+                                <li>How does your faith guide what you need from a partner?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('resultsContent').innerHTML = resultsHTML;
+        }
+
+        function restartQuiz() {
+            document.getElementById('startBtn').style.display = 'inline-block';
+            document.getElementById('quizContainer').classList.remove('active');
+            document.getElementById('resultsContainer').classList.remove('active');
+            document.getElementById('assessment').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Page is ready
+        });
+    </script>
+</body>
+</html>
